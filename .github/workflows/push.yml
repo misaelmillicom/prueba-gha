@@ -1,20 +1,12 @@
-name: learn-github-actions
-on: [push]
-jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
+on: push
+jobs: 
+  testing-actions:
+    runs-on: ubuntu-lastest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - name: build and push to docker
-        uses: docker/build-push-action@v2
+      - uses: /.github/actions/hello
+        id: hello
         with:
-          node-version: '14'
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: ${{ github.repository }}
-          tag_with_ref: true
-          tag_with_sha: true
-          tags: ${{ github.sha }}
-      - run: npm install -g bats
-      - run: bats -v
+          who-to-greet: "world"
+      - run: |
+          echo "Time: ${{steps.hello.outputs.time}}"
