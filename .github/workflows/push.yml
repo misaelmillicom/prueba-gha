@@ -10,7 +10,6 @@ jobs:
           ls -la
           cd ./.github/actions/hello
           ls -la
-      - uses: ./.github/actions/hello
         id: hello
         with:
           who-to-greet: "World"
