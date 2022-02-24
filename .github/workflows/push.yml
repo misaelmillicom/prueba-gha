@@ -1,12 +1,12 @@
 name: Build and test of Java Project
- 
+
 on: [push]
- 
+
 jobs:
- build:
-   runs-on: ubuntu-latest
- 
-   steps:
-     - uses: actions/checkout@v2
-     - name: Building the image from the Dockerfile
-        uses: ./.github/action-docker
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Building the image from the Dockerfile
+        uses: ./.github/actions/action-docker
