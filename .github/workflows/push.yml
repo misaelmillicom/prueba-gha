@@ -10,10 +10,9 @@ jobs:
           cd ./.github/actions/hello
           ls -la
       - uses: ./.github/actions/hello
-        run: |
-            ls -la
         id: hello
         with:
           who-to-greet: "World"
       - run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
+          ls -la
