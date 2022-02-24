@@ -8,9 +8,10 @@ jobs:
         run: |
           run: |
           ls -la
-          cd ./.github
+      - uses: ./.github/actions/hello
+         run: |
+          run: |
           ls -la
-      - uses: ./actions/hello
         id: hello
         with:
           who-to-greet: "World"
