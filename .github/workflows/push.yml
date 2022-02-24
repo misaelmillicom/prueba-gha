@@ -6,7 +6,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           pwd
-          ls ./.github/actions/hello
+          ls .github/actions/hello
           cd ./
           ls -la
       - uses: ./.github/actions/hello
