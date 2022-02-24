@@ -4,15 +4,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          pwd
-          ls /.github/actions/hello
-          cd ./
-          ls -la
-      - uses: /.github/actions/hello
+      - name: Check PlatformIO
+        run: |
+          pio system info
+      - uses: ./.github/actions/hello
         id: hello
         with:
           who-to-greet: "World"
       - run: |
-          ls -la
           echo "Time: ${{ steps.hello.outputs.time }}"
