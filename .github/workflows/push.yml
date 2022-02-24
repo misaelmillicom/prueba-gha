@@ -5,6 +5,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          pwd
           ls -la
       - uses: ./.github/actions/hello
         id: hello
