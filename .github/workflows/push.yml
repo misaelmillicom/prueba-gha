@@ -7,6 +7,7 @@ jobs:
       - run: |
           pwd
           ls ./.github/actions/hello
+          cd ./
           ls -la
       - uses: ./.github/actions/hello
         id: hello
